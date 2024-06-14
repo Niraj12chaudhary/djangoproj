@@ -1,20 +1,19 @@
-# from django.urls import path
-# from .views import home, add_numbers
-
-# urlpatterns = [
-#     path('add/', add_numbers, name='add-numbers'),
-#       path('', home, name='home'),
-
-# ]
-
+# email_app/urls.py
 
 from django.urls import path
-from .views import home, add_numbers, subtract_numbers, multiply_numbers, divide_numbers
+from .views import home, add_numbers_get, subtract_numbers_get, multiply_numbers_get, divide_numbers_get
+from .views import add_numbers_post, subtract_numbers_post, multiply_numbers_post, divide_numbers_post
 
 urlpatterns = [
     path('', home, name='home'),
-    path('add/', add_numbers, name='add-numbers'),
-    path('subtract/', subtract_numbers, name='subtract-numbers'),
-    path('multiply/', multiply_numbers, name='multiply-numbers'),
-    path('divide/', divide_numbers, name='divide-numbers'),
+    # GET requests
+    path('add/', add_numbers_get, name='add-numbers-get'),
+    path('subtract/', subtract_numbers_get, name='subtract-numbers-get'),
+    path('multiply/', multiply_numbers_get, name='multiply-numbers-get'),
+    path('divide/', divide_numbers_get, name='divide-numbers-get'),
+    # POST requests
+    path('add_post/', add_numbers_post, name='add-numbers-post'),
+    path('subtract_post/', subtract_numbers_post, name='subtract-numbers-post'),
+    path('multiply_post/', multiply_numbers_post, name='multiply-numbers-post'),
+    path('divide_post/', divide_numbers_post, name='divide-numbers-post'),
 ]
